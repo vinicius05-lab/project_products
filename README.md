@@ -46,7 +46,7 @@ As requisições devem ser feitas nos seguintes formatos JSON:
 }
 ```
 # Obs:
-- Todos os usuários por padrão é salvo no banco de dados com a role de ADMIN:
+- Todos os usuários por padrão são salvo no banco de dados com a role de ADMIN:
 
 ```java
 public User(UserRequest data){
