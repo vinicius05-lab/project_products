@@ -1,3 +1,8 @@
+# Projeto de API com Spring Boot e MySQL
+
+## Sobre o Projeto
+Este projeto é uma API desenvolvida com Spring Boot que utiliza MySQL como banco de dados. A API permite o cadastro de usuários, login, além de operações CRUD (Create, Read, Update, Delete) para categorias e produtos.
+
 # Sobre o funcionamento da API:
 Para que esta API funcione corretamente na sua máquina você deve realizar as configurações corretas do banco de dados mysql no "application.properties":
 
