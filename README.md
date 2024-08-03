@@ -61,5 +61,5 @@ public User(UserRequest data){
         this.role = UserRole.ADMIN; //Para mudar é só trocar UserRole.ADMIN para UserRole.USER
 }
 ```
-Obviamente em uma aplicação real não é recomendado de jeito nenhum salvar os usários como administradores, até porque eles terão o poder de adicionar produtos e categorias novas e deletar/atualizar ambos.
+Nota: Em uma aplicação real, não é recomendado salvar os usários como administradores, pois eles terão o poder de adicionar, deletar e atualizar produtos e categorias.
 Coloquei ADMIN como padrão por ser apenas um projeto individual e para facilitar a vida quem quer usar e testar a aplicação de forma completa, realizando coisas que só o administrador poderia fazer.
