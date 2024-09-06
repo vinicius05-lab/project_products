@@ -1,4 +1,4 @@
-package crud_project.products.service.Impl;
+package crud_project.product.service.Impl;
 
 import java.util.List;
 import java.util.Optional;
@@ -9,10 +9,10 @@ import org.springframework.stereotype.Service;
 
 import crud_project.category.model.Category;
 import crud_project.category.repository.CategoryRepository;
-import crud_project.products.dto.ProductRequest;
-import crud_project.products.model.Product;
-import crud_project.products.repository.ProductRepository;
-import crud_project.products.service.ProductService;
+import crud_project.product.dto.ProductRequest;
+import crud_project.product.model.Product;
+import crud_project.product.repository.ProductRepository;
+import crud_project.product.service.ProductService;
 
 @Service
 public class ProductServiceImpl implements ProductService{
@@ -29,16 +29,21 @@ public class ProductServiceImpl implements ProductService{
                 return ResponseEntity.status(409).build();
             }
 
-            Optional<Category> categoryOptional = categoryRepository.findById(data.category_id());
+           if(data.categoryId() == null){
+                return ResponseEntity.status(400).build();
+           }
+
+            Optional<Category> categoryOptional = categoryRepository.findById(data.categoryId());
 
             if(categoryOptional.isPresent()){
                 productRepository.save(new Product(data, categoryOptional.get()));
                 return ResponseEntity.ok("Produto salvo no banco de dados");
             }
 
-            return ResponseEntity.notFound().build();
+            return ResponseEntity.badRequest().build();
 
         } catch (Exception e) {
+            System.out.println(e);
             return ResponseEntity.status(500).build();
         }
     }
@@ -80,7 +85,7 @@ public class ProductServiceImpl implements ProductService{
 
             if(productOptional.isPresent()){
                 Product product = productOptional.get();
-                Optional<Category> categoryOptional = categoryRepository.findById(data.category_id());
+                Optional<Category> categoryOptional = categoryRepository.findById(data.categoryId());
                 
                 if(categoryOptional.isPresent()){
                     product.setName(data.name());

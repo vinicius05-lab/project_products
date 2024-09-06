@@ -1,11 +1,11 @@
-package crud_project.products.service;
+package crud_project.product.service;
 
 import java.util.List;
 
 import org.springframework.http.ResponseEntity;
 
-import crud_project.products.dto.ProductRequest;
-import crud_project.products.model.Product;
+import crud_project.product.dto.ProductRequest;
+import crud_project.product.model.Product;
 
 public interface ProductService {
     

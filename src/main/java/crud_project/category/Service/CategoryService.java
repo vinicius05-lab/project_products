@@ -11,7 +11,7 @@ public interface CategoryService {
 
     ResponseEntity<String> registerCategory(CategoryRequest data);
 
-    ResponseEntity<List<Category>> getAlCategories();
+    ResponseEntity<List<Category>> getAllCategories();
 
     ResponseEntity<Category> getCategoryById(Long id);
 

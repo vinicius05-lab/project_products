@@ -1,4 +1,4 @@
-package crud_project.products.dto;
+package crud_project.product.dto;
 
 import jakarta.validation.constraints.NotBlank;
 
@@ -14,5 +14,5 @@ public record ProductRequest(
     
     int quantity,
 
-    Long category_id
+    Long categoryId
 ) {}

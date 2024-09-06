@@ -21,7 +21,7 @@ public class CategoryServiceImpl implements CategoryService{
     public ResponseEntity<String> registerCategory(CategoryRequest data){
         try {
             if(categoryRepository.findByName(data.name()) != null){
-                return ResponseEntity.badRequest().build();
+                return ResponseEntity.status(409).build();
             }
 
             categoryRepository.save(new Category(data));
@@ -32,7 +32,7 @@ public class CategoryServiceImpl implements CategoryService{
         }
     }
 
-    public ResponseEntity<List<Category>> getAlCategories(){
+    public ResponseEntity<List<Category>> getAllCategories(){
         try {
             List<Category> categories = categoryRepository.findAll();
 

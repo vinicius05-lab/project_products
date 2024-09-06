@@ -1,4 +1,4 @@
-package crud_project.products.controller;
+package crud_project.product.controller;
 
 import java.util.List;
 
@@ -7,9 +7,9 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import crud_project.products.dto.ProductRequest;
-import crud_project.products.model.Product;
-import crud_project.products.service.Impl.ProductServiceImpl;
+import crud_project.product.dto.ProductRequest;
+import crud_project.product.model.Product;
+import crud_project.product.service.Impl.ProductServiceImpl;
 import jakarta.validation.Valid;
 
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -27,7 +27,7 @@ public class ProductController {
     @Autowired
     ProductServiceImpl productService;
 
-    @PostMapping()
+    @PostMapping
     public ResponseEntity<String> registerProduct(@RequestBody @Valid ProductRequest data) {
         
         return productService.registerProduct(data);

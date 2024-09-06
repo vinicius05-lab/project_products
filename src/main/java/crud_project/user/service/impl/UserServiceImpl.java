@@ -26,7 +26,7 @@ public class UserServiceImpl implements UserService{
     public ResponseEntity<String> registerUser(UserRequest data) {
         try {
             if(userRepository.findByEmail(data.email()) != null){
-                return ResponseEntity.badRequest().build();
+                return ResponseEntity.status(409).build();
             }
 
             String hash = passwordEncoder.encode(data.password());

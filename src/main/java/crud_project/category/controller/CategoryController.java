@@ -31,8 +31,8 @@ public class CategoryController {
     }
 
     @GetMapping
-    public ResponseEntity<List<Category>> getAlCategories(){
-        return categoryService.getAlCategories();
+    public ResponseEntity<List<Category>> getAllCategories(){
+        return categoryService.getAllCategories();
     }
 
     @GetMapping("/{id}")
@@ -47,6 +47,6 @@ public class CategoryController {
 
     @DeleteMapping("/{id}")
     public ResponseEntity<String> deleteCategory(@PathVariable Long id){
-        return deleteCategory(id);
+        return categoryService.deleteCategory(id);
     }
 }

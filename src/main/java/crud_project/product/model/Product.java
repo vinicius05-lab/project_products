@@ -1,7 +1,7 @@
-package crud_project.products.model;
+package crud_project.product.model;
 
 import crud_project.category.model.Category;
-import crud_project.products.dto.ProductRequest;
+import crud_project.product.dto.ProductRequest;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
